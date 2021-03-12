@@ -49,11 +49,11 @@ const btnQuestions = document.querySelectorAll('.header-question a');
 btnQuestions.forEach((a) => {
     a.addEventListener('click', (e)=>{
         e.preventDefault();
-        if(a.children[0].getAttribute('class') == 'fas fa-chevron-up red'){
-            a.children[0].className = "fas fa-chevron-down";
+        if(a.children[0].getAttribute('class') == 'fas fa-chevron-down red'){
+            a.children[0].classList.remove('red');
             a.parentNode.parentNode.childNodes[3].classList.remove('view-question');
         }else{
-            a.children[0].className = "fas fa-chevron-up red";
+            a.children[0].classList.add('red');
             a.parentNode.parentNode.childNodes[3].classList.add('view-question');
         }
     });

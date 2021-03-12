@@ -63,14 +63,36 @@ p{
         text-align: left;
     }
 }
-.btn{
-    display: inline-block;
-    width: auto;
-    padding: 1rem 1.5rem;
-    background: var(--soft-blue);
-    border-radius: .3rem;
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
     color: #fff;
-}
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+  }
+  .btn-blue{
+    background: var(--soft-blue);
+    border: .2rem solid var(--soft-blue);
+  }
+  .btn-blue:hover{
+    background: none;
+    color: var(--soft-blue);
+  }
+  .btn-red{
+    background: var(--soft-red);
+    border: .2rem solid var(--soft-red);
+  }
 /*===========COLUNMS=============*/
 .grid{
     display: grid;
@@ -231,6 +253,7 @@ p{
 .menu-items{
     width: 70%;
     margin: 1rem auto;
+    padding-bottom: .5px;
 }
 .menu-items > div{
     border-top: 1px solid #e1e1e1;
@@ -238,6 +261,14 @@ p{
     display: block;
     padding: 2rem;
     text-align: center;
+}
+@media (min-width: 768px){
+    .menu-items > div{
+        border: none;
+    }
+    .menu-items{
+        border-bottom: .2rem solid #e1e1e1;
+    }
 }
 .menu-items > div a{
     margin: 0;
@@ -264,7 +295,18 @@ p{
 }
 .content-features > div{
     display: none;
+    animation: out 0.8s;
 }
+@keyframes out {
+    from {
+      opacity: 0;
+      transform: translateY(-3rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 .feature-active{
     display: block!important;
 }
@@ -328,14 +370,15 @@ p{
 }
 .header-question a i{
     color: var(--soft-blue);
-}
-.red{
-    color: var(--soft-red)!important;
+    transition: all ease .2s;
 }
 .body-question{
     height: 0;
     overflow: hidden;
-    transition: all ease .5s;
+}
+.red{
+    transform: rotate(180deg);
+    color: var(--soft-red)!important;
 }
 .view-question{
     height: auto;
@@ -355,16 +398,11 @@ footer.site-footer p{
 .content-contact{
     margin: 2rem  auto;
 }
-.contact{
-    background: var(--soft-red);
-}
-input[type="email"]{
+.contact,input[type="email"]{
+    margin: .5rem 0;
     padding: 1rem 1.5rem;
     border: none;
     border-radius: .3rem;
-}
-.contact,input[type="email"]{
-    margin: .5rem 0;
 }
 @media (min-width: 768px){
     .contact,input[type="email"]{
